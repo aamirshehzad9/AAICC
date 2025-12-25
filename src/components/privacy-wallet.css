@@ -1,0 +1,221 @@
+/**
+ * Privacy & DID Wallet Section Styles
+ * Royal Blue & Gold Theme - Security and data ownership
+ */
+
+.privacy-wallet {
+  background: linear-gradient(180deg, var(--color-background) 0%, rgba(238, 173, 14, 0.02) 50%, var(--color-background) 100%);
+  position: relative;
+}
+
+.privacy-wallet-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.privacy-wallet-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(81, 207, 102, 0.1);
+  border: 1px solid rgba(81, 207, 102, 0.3);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #51cf66;
+  width: fit-content;
+}
+
+.privacy-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.privacy-title .highlight {
+  background: linear-gradient(135deg, #51cf66 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.privacy-description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.privacy-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.privacy-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(81, 207, 102, 0.05);
+  border: 1px solid rgba(81, 207, 102, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-standard);
+}
+
+.privacy-feature:hover {
+  background: rgba(81, 207, 102, 0.08);
+  border-color: rgba(81, 207, 102, 0.25);
+  transform: translateX(8px);
+}
+
+.privacy-feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #51cf66 0%, var(--color-primary) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-background);
+  font-size: 1.5rem;
+}
+
+.privacy-feature-content {
+  flex: 1;
+}
+
+.privacy-feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-feature-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.privacy-wallet-visual {
+  display: none;
+}
+
+.wallet-card {
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.wallet-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(81, 207, 102, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.wallet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.wallet-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.wallet-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(81, 207, 102, 0.15);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  color: #51cf66;
+}
+
+.wallet-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(238, 173, 14, 0.08);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 12px;
+}
+
+.credential-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.credential-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--color-background);
+}
+
+.credential-name {
+  font-size: 0.9375rem;
+  color: white;
+}
+
+.credential-verified {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #51cf66;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .privacy-wallet-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .privacy-wallet-visual {
+    display: block;
+  }
+}
+

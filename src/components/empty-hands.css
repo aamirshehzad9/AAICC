@@ -1,0 +1,170 @@
+/**
+ * Empty Hands Problem Section Styles
+ * Royal Blue & Gold Theme - Emotional storytelling
+ */
+
+.empty-hands {
+  background: linear-gradient(180deg, var(--color-background) 0%, rgba(0, 0, 51, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.empty-hands::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(238, 173, 14, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.empty-hands-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.empty-hands-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.empty-hands-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ff6b6b;
+  width: fit-content;
+}
+
+.empty-hands-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.empty-hands-title .highlight {
+  background: linear-gradient(135deg, #ff6b6b 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.empty-hands-description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-hands-problems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 107, 107, 0.05);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-standard);
+}
+
+.problem-item:hover {
+  background: rgba(255, 107, 107, 0.08);
+  border-color: rgba(255, 107, 107, 0.25);
+  transform: translateX(8px);
+}
+
+.problem-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #ff6b6b;
+}
+
+.problem-text {
+  flex: 1;
+}
+
+.problem-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.problem-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.empty-hands-visual {
+  display: none;
+  position: relative;
+}
+
+.empty-hands-illustration {
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+.illustration-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.2) 0%, rgba(238, 173, 14, 0.2) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.illustration-text {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.empty-hands-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .empty-hands-content {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  
+  .empty-hands-visual {
+    display: block;
+  }
+}
+

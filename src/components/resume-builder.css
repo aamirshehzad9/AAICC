@@ -1,0 +1,245 @@
+/**
+ * AI Resume & Portfolio Builder Section Styles
+ * Royal Blue & Gold Theme - ATS-compatible resume optimization
+ */
+
+.resume-builder {
+  background: linear-gradient(180deg, var(--color-background) 0%, rgba(0, 0, 51, 0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-builder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(238, 173, 14, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.resume-builder-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-builder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resume-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(238, 173, 14, 0.1);
+  border: 1px solid rgba(238, 173, 14, 0.3);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  width: fit-content;
+}
+
+.resume-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.resume-description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.resume-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.resume-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resume-feature-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.resume-feature-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.resume-builder-visual {
+  display: none;
+}
+
+.resume-preview {
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+}
+
+.resume-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(238, 173, 14, 0.15);
+}
+
+.resume-preview-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+
+.ats-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(81, 207, 102, 0.15);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  color: #51cf66;
+  font-weight: 600;
+}
+
+.resume-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resume-section {
+  padding: 1.5rem;
+  background: rgba(238, 173, 14, 0.08);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 12px;
+}
+
+.resume-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.resume-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resume-line {
+  height: 12px;
+  background: rgba(238, 173, 14, 0.2);
+  border-radius: 4px;
+}
+
+.resume-line-short {
+  width: 60%;
+}
+
+.resume-line-medium {
+  width: 80%;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .resume-builder-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .resume-builder-visual {
+    display: block;
+  }
+  
+  .resume-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Resume text content styles - maintains exact same spacing */
+.resume-text {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.resume-job-header {
+  margin-bottom: 0.75rem;
+}
+
+.resume-job-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+  margin: 0;
+}
+
+.resume-company {
+  font-size: 0.8125rem;
+  color: var(--color-primary);
+  margin: 0.25rem 0 0 0;
+}
+
+.resume-achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+}
+
+.resume-achievement {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.75);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.resume-achievement::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: rgba(231, 43, 127, 0.12);
+  border: 1px solid rgba(231, 43, 127, 0.25);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}

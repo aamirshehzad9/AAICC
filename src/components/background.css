@@ -1,0 +1,221 @@
+/**
+ * Animated Glassmorphism Background
+ * Rotating & Pulsing Sphere with Pink/Purple Gradient
+ */
+
+/* ========================================
+   BACKGROUND CONTAINER
+   ======================================== */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ========================================
+   ANIMATED SPHERE - ROTATE + PULSE
+   ======================================== */
+.glassmorphism-sphere {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  background: var(--gradient-sphere);
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: 
+    sphereRotate 60s linear infinite,
+    spherePulse 8s ease-in-out infinite,
+    sphereFloat 20s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Primary Sphere - Top Right */
+.sphere-1 {
+  top: -20%;
+  right: -15%;
+  background: linear-gradient(135deg, #4A90E2 0%, #6A4C93 50%, #B565A7 100%);
+}
+
+/* Secondary Sphere - Bottom Left */
+.sphere-2 {
+  bottom: -25%;
+  left: -20%;
+  background: linear-gradient(135deg, #E72B7F 0%, #B565A7 50%, #6A4C93 100%);
+  animation-delay: -30s, -4s, -10s;
+  opacity: 0.5;
+}
+
+/* Accent Sphere - Center */
+.sphere-3 {
+  top: 30%;
+  left: 40%;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #F8A5C2 0%, #E72B7F 50%, #6A4C93 100%);
+  animation-delay: -15s, -2s, -5s;
+  opacity: 0.4;
+  filter: blur(100px);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Slow Rotation - 60 seconds */
+@keyframes sphereRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Pulsing Glow - 8 seconds */
+@keyframes spherePulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(80px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(100px);
+  }
+}
+
+/* Floating Movement - 20 seconds */
+@keyframes sphereFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -30px) rotate(90deg);
+  }
+  50% {
+    transform: translate(-30px, 50px) rotate(180deg);
+  }
+  75% {
+    transform: translate(30px, 30px) rotate(270deg);
+  }
+}
+
+/* Gradient Color Shift - 15 seconds */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ========================================
+   GRADIENT OVERLAY
+   ======================================== */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 10, 46, 0.3) 0%,
+    rgba(26, 10, 46, 0.7) 50%,
+    rgba(26, 10, 46, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE/TABLET
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .glassmorphism-sphere {
+    width: 700px;
+    height: 700px;
+    filter: blur(60px);
+  }
+  
+  .sphere-3 {
+    width: 400px;
+    height: 400px;
+    filter: blur(70px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .glassmorphism-sphere {
+    width: 500px;
+    height: 500px;
+    filter: blur(50px);
+    opacity: 0.5;
+  }
+  
+  .sphere-1 {
+    top: -30%;
+    right: -30%;
+  }
+  
+  .sphere-2 {
+    bottom: -35%;
+    left: -35%;
+  }
+  
+  .sphere-3 {
+    width: 300px;
+    height: 300px;
+    filter: blur(60px);
+    opacity: 0.3;
+  }
+  
+  /* Reduce animation intensity on mobile for performance */
+  @keyframes sphereRotate {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+  @keyframes spherePulse {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  .glassmorphism-sphere {
+    animation: none;
+  }
+}
+
+/* GPU Acceleration */
+.glassmorphism-sphere,
+.gradient-overlay {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+

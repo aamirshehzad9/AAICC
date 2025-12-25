@@ -1,0 +1,383 @@
+/**
+ * AAICC Landing Page - Global Styles
+ * Pink/Purple Glassmorphism & Neumorphism Theme
+ * 
+ * Design System:
+ * - Deep Purple background (#1a0a2e)
+ * - Pink/Purple/Mauve gradient accents
+ * - Strong Glassmorphism effects (50% transparency, 30px blur)
+ * - Neumorphism depth effects
+ * - Modern premium typography
+ */
+
+/* ========================================
+   CSS VARIABLES - PINK/PURPLE GLASSMORPHISM THEME
+   ======================================== */
+:root {
+  /* Pink/Purple/Mauve Color Palette */
+  --color-primary: #E72B7F;           /* Bright Pink - Primary Accent */
+  --color-primary-light: #F8A5C2;     /* Light Pink */
+  --color-primary-dark: #C91F6A;      /* Dark Pink */
+  --color-secondary: #6A4C93;         /* Purple - Secondary */
+  --color-secondary-light: #8B6FB0;   /* Light Purple */
+  --color-secondary-dark: #4A3470;    /* Dark Purple */
+  --color-accent: #B565A7;            /* Mauve - Accent */
+  --color-neutral: #D4A5A5;           /* Light Mauve */
+  --color-background: #1a0a2e;        /* Deep Purple-Black Background */
+  --color-background-light: #2d1b4e;  /* Lighter Purple Background */
+  
+  /* Gradients - Pink/Purple/Mauve */
+  --gradient-primary: linear-gradient(135deg, #E72B7F 0%, #B565A7 100%);
+  --gradient-secondary: linear-gradient(135deg, #6A4C93 0%, #4A3470 100%);
+  --gradient-accent: linear-gradient(135deg, #F8A5C2 0%, #E72B7F 50%, #6A4C93 100%);
+  --gradient-sphere: linear-gradient(135deg, #4A90E2 0%, #6A4C93 50%, #B565A7 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(231, 43, 127, 0.3) 0%, rgba(106, 76, 147, 0.3) 100%);
+  
+  /* Strong Glassmorphism Effect */
+  --glass-bg: rgba(255, 255, 255, 0.08);           /* Strong transparency */
+  --glass-bg-strong: rgba(255, 255, 255, 0.12);    /* Extra strong */
+  --glass-border: rgba(255, 255, 255, 0.2);        /* Visible border */
+  --glass-hover: rgba(255, 255, 255, 0.15);        /* Hover state */
+  --glass-blur: 30px;                               /* Strong blur */
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);  /* Deep shadow */
+  
+  /* Neumorphism Variables */
+  --neuro-light: rgba(255, 255, 255, 0.1);
+  --neuro-dark: rgba(0, 0, 0, 0.3);
+  --neuro-distance: 12px;
+  --neuro-blur: 24px;
+  --neuro-shadow-light: -12px -12px 24px var(--neuro-light);
+  --neuro-shadow-dark: 12px 12px 24px var(--neuro-dark);
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  
+  /* Spacing */
+  --container-max-width: 1280px;
+  --section-padding: 5rem 0;
+  
+  /* Transitions */
+  --transition-standard: 300ms ease-in-out;
+  --transition-slow: 600ms ease-in-out;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: white;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========================================
+   LAYOUT UTILITIES
+   ======================================== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+/* ========================================
+   STRONG GLASSMORPHISM - PINK/PURPLE
+   ======================================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+}
+
+.glass:hover {
+  background: var(--glass-hover);
+  border-color: rgba(231, 43, 127, 0.3);
+  transform: translateY(-2px);
+  transition: all var(--transition-standard);
+}
+
+.glass-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 2px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow), 0 0 40px rgba(231, 43, 127, 0.2);
+}
+
+/* ========================================
+   NEUMORPHISM UTILITIES
+   ======================================== */
+.neuro-card {
+  background: var(--color-background-light);
+  border-radius: 24px;
+  box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark);
+  padding: 2rem;
+}
+
+.neuro-raised {
+  box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark);
+}
+
+.neuro-pressed {
+  box-shadow: inset var(--neuro-shadow-dark), inset var(--neuro-shadow-light);
+}
+
+.neuro-button {
+  background: var(--color-background-light);
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark);
+  transition: all var(--transition-standard);
+}
+
+.neuro-button:hover {
+  box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark), 0 0 20px rgba(231, 43, 127, 0.3);
+}
+
+.neuro-button:active {
+  box-shadow: inset var(--neuro-shadow-dark), inset var(--neuro-shadow-light);
+}
+
+/* ========================================
+   GRADIENTS - PINK/PURPLE/MAUVE
+   ======================================== */
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.gradient-accent {
+  background: var(--gradient-accent);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   BUTTONS - PINK/PURPLE GLASSMORPHISM
+   ======================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-standard);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 8px 24px rgba(231, 43, 127, 0.4), var(--neuro-shadow-dark);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(231, 43, 127, 0.6), var(--neuro-shadow-dark);
+  filter: brightness(1.15);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: inset var(--neuro-shadow-dark), inset var(--neuro-shadow-light);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 2px solid var(--glass-border);
+  color: white;
+  box-shadow: var(--glass-shadow);
+}
+
+.btn-secondary:hover {
+  background: var(--glass-hover);
+  border-color: rgba(231, 43, 127, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow), 0 0 20px rgba(231, 43, 127, 0.3);
+}
+
+.btn-glass {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 2px solid var(--glass-border);
+  color: white;
+  box-shadow: var(--glass-shadow), 0 0 30px rgba(106, 76, 147, 0.3);
+}
+
+.btn-neuro {
+  background: var(--color-background-light);
+  color: var(--color-primary);
+  box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark);
+}
+
+.btn-neuro:hover {
+  box-shadow: var(--neuro-shadow-light), var(--neuro-shadow-dark), 0 0 25px rgba(231, 43, 127, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-neuro:active {
+  box-shadow: inset var(--neuro-shadow-dark), inset var(--neuro-shadow-light);
+  transform: translateY(0);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ========================================
+   PINK/PURPLE ACCENTS
+   ======================================== */
+.pink-accent {
+  color: var(--color-primary);
+}
+
+.purple-accent {
+  color: var(--color-secondary);
+}
+
+.mauve-accent {
+  color: var(--color-accent);
+}
+
+.pink-border {
+  border-color: var(--color-primary);
+}
+
+.pink-glow {
+  box-shadow: 0 0 30px rgba(231, 43, 127, 0.5);
+}
+
+.purple-glow {
+  box-shadow: 0 0 30px rgba(106, 76, 147, 0.5);
+}
+
+.glow-strong {
+  box-shadow: 0 0 40px rgba(231, 43, 127, 0.6), 0 0 80px rgba(106, 76, 147, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}

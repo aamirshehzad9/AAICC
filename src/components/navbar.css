@@ -1,0 +1,162 @@
+/**
+ * Navbar Component Styles
+ * Pink/Purple Glassmorphism Theme
+ * 250% Logo Scale with Strong Glass Effects
+ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all var(--transition-standard);
+}
+
+.navbar.scrolled {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), 0 0 40px rgba(231, 43, 127, 0.2);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px; /* Scaled for 250% logo (140px) */
+  padding: 0 2rem; /* Increased padding for larger header */
+}
+
+/* Logo - PRECISION CRAFTED */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Increased for 250% logo scale */
+  text-decoration: none;
+  transition: transform var(--transition-standard);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-image {
+  width: 140px; /* 250% scale: 56px × 2.5 = 140px */
+  height: 140px; /* 250% scale: 56px × 2.5 = 140px */
+  object-fit: cover; /* Changed from contain to cover for better circular rendering */
+  background: transparent !important;
+  mix-blend-mode: normal;
+  
+  /* CIRCULAR/ROUND SHAPE */
+  border-radius: 50%;
+  
+  /* Enhanced drop shadow with pink glow */
+  filter: drop-shadow(0 6px 20px rgba(231, 43, 127, 0.6));
+  
+  /* Ensure clean rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Smooth edges for circular shape */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.logo-text {
+  font-size: 2.25rem; /* Scaled proportionally with 250% logo */
+  font-weight: 700;
+  font-family: var(--font-display);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em; /* Tighter spacing for premium feel */
+}
+
+/* Desktop Menu */
+.navbar-menu {
+  display: none;
+  align-items: center;
+  gap: 3rem; /* Increased for larger header scale */
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 1.125rem; /* Scaled for larger header */
+  font-weight: 500;
+  transition: color var(--transition-standard);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width var(--transition-standard);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Desktop CTA */
+.navbar-cta {
+  display: none;
+  align-items: center;
+  gap: 1.5rem; /* Scaled for larger header */
+}
+
+.btn-sm {
+  padding: 0.875rem 2rem; /* Scaled for larger header */
+  font-size: 1.0625rem; /* Scaled proportionally */
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all var(--transition-standard);
+  border-radius: 8px;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(231, 43, 127, 0.15);
+  color: var(--color-primary);
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex;
+  }
+  
+  .navbar-cta {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+

@@ -1,0 +1,212 @@
+/**
+ * Omni-Channel Integrations Section Styles
+ * Royal Blue & Gold Theme - Platform connections showcase
+ */
+
+.integrations {
+  background: var(--color-background);
+  position: relative;
+}
+
+.integrations-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.integrations-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(238, 173, 14, 0.1);
+  border: 1px solid rgba(238, 173, 14, 0.3);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.integrations-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.integrations-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.integrations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.integration-card {
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  transition: all var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+}
+
+.integration-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-standard);
+}
+
+.integration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(238, 173, 14, 0.2);
+  border-color: rgba(238, 173, 14, 0.3);
+}
+
+.integration-card:hover::before {
+  opacity: 1;
+}
+
+.integration-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.integration-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--gradient-primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.integration-info {
+  flex: 1;
+}
+
+.integration-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.integration-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #51cf66;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #51cf66;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.integration-description {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.integration-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.integration-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(238, 173, 14, 0.08);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.integration-feature svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+}
+
+.integrations-flow {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(238, 173, 14, 0.03);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+}
+
+.flow-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.flow-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(238, 173, 14, 0.08);
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.flow-arrow {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .integrations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .flow-diagram {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+

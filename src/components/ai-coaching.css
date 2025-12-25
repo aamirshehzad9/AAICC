@@ -1,0 +1,214 @@
+/**
+ * AI Personal Coaching Section Styles
+ * Royal Blue & Gold Theme - 24/7 virtual career coach
+ */
+
+.ai-coaching {
+  background: linear-gradient(180deg, var(--color-background) 0%, rgba(238, 173, 14, 0.03) 50%, var(--color-background) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-coaching::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(238, 173, 14, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ai-coaching-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-coaching-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.coaching-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6366f1;
+  width: fit-content;
+}
+
+.coaching-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.coaching-description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.coaching-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.coaching-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-standard);
+}
+
+.coaching-feature:hover {
+  background: rgba(238, 173, 14, 0.08);
+  border-color: rgba(238, 173, 14, 0.25);
+  transform: translateX(8px);
+}
+
+.coaching-feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #6366f1 0%, var(--color-primary) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.coaching-feature-content {
+  flex: 1;
+}
+
+.coaching-feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.coaching-feature-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.ai-coaching-visual {
+  display: none;
+}
+
+.chat-interface {
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(238, 173, 14, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, var(--color-primary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.chat-info {
+  flex: 1;
+}
+
+.chat-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.chat-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #51cf66;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message-bubble {
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 85%;
+}
+
+.message-user {
+  align-self: flex-end;
+  background: var(--gradient-primary);
+  color: var(--color-background);
+  font-weight: 500;
+}
+
+.message-ai {
+  align-self: flex-start;
+  background: rgba(238, 173, 14, 0.1);
+  border: 1px solid rgba(238, 173, 14, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .ai-coaching-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .ai-coaching-visual {
+    display: block;
+  }
+}
+

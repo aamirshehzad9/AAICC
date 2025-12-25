@@ -1,0 +1,227 @@
+/**
+ * AI Super Human Profile Section Styles
+ * Royal Blue & Gold Theme - Dynamic professional identity showcase
+ */
+
+.ai-profile {
+  background: linear-gradient(180deg, var(--color-background) 0%, rgba(238, 173, 14, 0.03) 50%, var(--color-background) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-profile::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(238, 173, 14, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ai-profile-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ai-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(238, 173, 14, 0.1);
+  border: 1px solid rgba(238, 173, 14, 0.3);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  width: fit-content;
+}
+
+.ai-profile-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ai-profile-description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-profile-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.profile-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-standard);
+}
+
+.profile-feature:hover {
+  background: rgba(238, 173, 14, 0.08);
+  border-color: rgba(238, 173, 14, 0.25);
+  transform: translateX(8px);
+}
+
+.profile-feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-background);
+  font-size: 1.5rem;
+}
+
+.profile-feature-content {
+  flex: 1;
+}
+
+.profile-feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.profile-feature-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.ai-profile-visual {
+  display: none;
+}
+
+.profile-card {
+  background: rgba(238, 173, 14, 0.05);
+  border: 1px solid rgba(238, 173, 14, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+}
+
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(238, 173, 14, 0.15);
+}
+
+.profile-avatar-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-background);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.profile-title-text {
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(238, 173, 14, 0.05);
+  border-radius: 12px;
+}
+
+.profile-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.profile-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.profile-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(238, 173, 14, 0.1);
+  border: 1px solid rgba(238, 173, 14, 0.2);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .ai-profile-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .ai-profile-visual {
+    display: block;
+  }
+  
+  .ai-profile-features {
+    grid-template-columns: 1fr;
+  }
+}
+
